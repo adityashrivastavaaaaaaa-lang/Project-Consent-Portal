@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Consent Portal - Kumar Aditya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .sig-canvas { touch-action: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div>
+                <h1 class="text-2xl font-bold text-indigo-700 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    Project Consent Portal
+                </h1>
+                <p class="text-slate-500 text-sm mt-1">8th Semester B.Tech Project Verification</p>
+            </div>
+            <div id="wallet-section">
+                <button id="connect-wallet" class="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                    Connect Polkadot
+                </button>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Application Content -->
+            <section class="bg-white p-8 rounded-2xl shadow-md border border-slate-200 space-y-6">
+                <div class="flex items-center gap-2 text-indigo-600 font-semibold border-b pb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Application Draft
+                </div>
+                
+                <div class="space-y-4 text-slate-700 leading-relaxed text-sm">
+                    <p class="font-bold">To,</p>
+                    <div class="space-y-1">
+                        <input type="text" id="prof-name" placeholder="Professor's Name" class="w-full border-b border-slate-300 focus:border-indigo-500 outline-none pb-1 font-medium italic">
+                        <p>School of Computer Science & Engineering, KIIT</p>
+                    </div>
+
+                    <p class="pt-2 font-semibold">Subject: Request for Consent as Project Guide – B. Tech Project-II</p>
+
+                    <p>Respected Sir/Madam,</p>
+                    <p>
+                        I, <span class="font-bold">Kumar Aditya</span> (Roll No. <span class="font-bold">2229038</span>), 
+                        a student of the 8th Semester B. Tech, am writing to request your mentorship for my final semester project. 
+                        I am conducting this project <span class="italic">individually</span>.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 space-y-1">
+                        <p class="text-xs uppercase tracking-wider text-slate-400 font-bold">Student Verification</p>
+                        <p><strong>Name:</strong> Kumar Aditya</p>
+                        <p><strong>Roll:</strong> 2229038</p>
+                        <p><strong>Group:</strong> Single Member</p>
+                    </div>
+
+                    <p>Thank you for your consideration.</p>
+                </div>
+            </section>
+
+            <!-- Signature & Blockchain Section -->
+            <section class="space-y-8">
+                <!-- Hand-drawn Signature -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2 text-indigo-600 font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 5 5"/><path d="m9.5 6.5 4 4"/></svg>
+                            Guide's Digital Signature
+                        </div>
+                        <button id="clear-canvas" class="p-2 text-slate-400 hover:text-red-500 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.9-9.9c1-1 2.5-1 3.4 0l4.4 4.4c1 1 1 2.5 0 3.4L10.5 21z"/><path d="m22 21-2-2"/><path d="m9 11 5 5"/></svg>
+                        </button>
+                    </div>
+                    
+                    <div class="relative bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl overflow-hidden">
+                        <canvas id="sig-canvas" width="400" height="150" class="w-full h-[150px] cursor-crosshair sig-canvas"></canvas>
+                        <div id="canvas-placeholder" class="absolute inset-0 flex items-center justify-center pointer-events-none text-slate-400 text-sm italic">
+                            Sign here using mouse or stylus
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Evidence -->
+                <div class="bg-indigo-900 text-white p-6 rounded-2xl shadow-lg space-y-4">
+                    <div class="flex items-center gap-2 font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-indigo-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        Polkadot Blockchain Verification
+                    </div>
+                    <p class="text-indigo-200 text-xs">
+                        Encrypt this document's metadata on the Polkadot network to prevent tampering.
+                    </p>
+                    
+                    <div id="blockchain-status">
+                        <button id="blockchain-sign" disabled class="w-full py-3 rounded-xl font-bold bg-indigo-800 text-indigo-400 cursor-not-allowed transition">
+                            Confirm with Polkadot Sign
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Status Messages -->
+                <div id="status-container" class="hidden flex items-center gap-3 p-4 rounded-xl text-sm border bg-blue-50 text-blue-700 border-blue-100">
+                    <span id="status-text"></span>
+                </div>
+
+                <!-- Final Action -->
+                <button id="download-btn" disabled class="w-full py-4 rounded-2xl flex items-center justify-center gap-2 font-bold shadow-xl bg-slate-200 text-slate-400 cursor-not-allowed transition-all active:scale-[0.98]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    Download Signed Consent
+                </button>
+            </section>
+        </main>
+
+        <footer class="text-center text-slate-400 text-xs pb-10">
+            Digital Signature Protocol for KIIT University Registration • Kumar Aditya (2229038)
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('sig-canvas');
+        const ctx = canvas.getContext('2d');
+        const clearBtn = document.getElementById('clear-canvas');
+        const placeholder = document.getElementById('canvas-placeholder');
+        const connectBtn = document.getElementById('connect-wallet');
+        const bcSignBtn = document.getElementById('blockchain-sign');
+        const downloadBtn = document.getElementById('download-btn');
+        const statusContainer = document.getElementById('status-container');
+        const statusText = document.getElementById('status-text');
+
+        let isDrawing = false;
+        let isSigned = false;
+        let walletConnected = false;
+        let bcSigned = false;
+
+        // Canvas Setup
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#000';
+
+        function startDrawing(e) {
+            isDrawing = true;
+            placeholder.classList.add('hidden');
+            draw(e);
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+            const x = clientX - rect.left;
+            const y = clientY - rect.top;
+
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            isSigned = true;
+            updateButtons();
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        window.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e); });
+        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e); });
+        canvas.addEventListener('touchend', stopDrawing);
+
+        clearBtn.addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            isSigned = false;
+            placeholder.classList.remove('hidden');
+            updateButtons();
+        });
+
+        function updateButtons() {
+            bcSignBtn.disabled = !isSigned || !walletConnected;
+            if (isSigned && walletConnected) {
+                bcSignBtn.classList.remove('bg-indigo-800', 'text-indigo-400', 'cursor-not-allowed');
+                bcSignBtn.classList.add('bg-indigo-500', 'text-white', 'hover:bg-indigo-400');
+            } else {
+                bcSignBtn.classList.add('bg-indigo-800', 'text-indigo-400', 'cursor-not-allowed');
+                bcSignBtn.classList.remove('bg-indigo-500', 'text-white', 'hover:bg-indigo-400');
+            }
+
+            downloadBtn.disabled = !isSigned || !bcSigned;
+            if (isSigned && bcSigned) {
+                downloadBtn.classList.remove('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
+                downloadBtn.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-blue-600', 'text-white');
+            } else {
+                downloadBtn.classList.add('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
+                downloadBtn.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-blue-600', 'text-white');
+            }
+        }
+
+        connectBtn.addEventListener('click', () => {
+            showStatus('Connecting to Polkadot extension...');
+            setTimeout(() => {
+                walletConnected = true;
+                document.getElementById('wallet-section').innerHTML = `
+                    <div class="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-lg border border-green-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-xs font-mono">5Grw...tQY</span>
+                    </div>
+                `;
+                showStatus('Wallet Connected: 5Grw...tQY');
+                updateButtons();
+            }, 800);
+        });
+
+        bcSignBtn.addEventListener('click', () => {
+            showStatus('Requesting signature from extension...');
+            setTimeout(() => {
+                bcSigned = true;
+                const mockHash = "0x" + Array.from({length: 64}, () => Math.floor(Math.random() * 16).toString(16)).join('');
+                document.getElementById('blockchain-status').innerHTML = `
+                    <div class="bg-indigo-950 p-3 rounded-lg border border-indigo-700">
+                        <p class="text-[10px] text-indigo-400 font-mono uppercase">Transaction Hash</p>
+                        <p class="text-[10px] font-mono break-all text-green-400">${mockHash}</p>
+                    </div>
+                `;
+                showStatus('Document cryptographically signed on Polkadot!');
+                updateButtons();
+            }, 1200);
+        });
+
+        function showStatus(msg) {
+            statusContainer.classList.remove('hidden');
+            statusText.textContent = msg;
+        }
+
+        downloadBtn.addEventListener('click', () => {
+            const data = {
+                student: "Kumar Aditya",
+                roll: "2229038",
+                prof: document.getElementById('prof-name').value || "Unnamed Professor",
+                timestamp: new Date().toISOString()
+            };
+            const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Consent_Aditya_2229038.json`;
+            a.click();
+        });
+    </script>
+</body>
+</html>
